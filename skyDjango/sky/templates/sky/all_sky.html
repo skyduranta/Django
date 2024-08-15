@@ -1,0 +1,23 @@
+{% extends "layout.html" %} 
+{% block title %} Sky Page {% endblock %}
+{% block content %}
+<h1 class="text-4xl font-bold bg-slate-400 p-5 m-4">All sky color</h1>
+<div class="grid grid-cols-3 gap-4 m-4">
+  {% for sky in skies %}
+  <div class="bg-gray-600 rounded p-5">
+    <img class="bg-slate-400 rounded shadow-lg gap-4 p-1 m-1" src="{{sky.image.url}}" alt="" />
+    <h3 class="text-2xl font-bold">{{sky.color}} </h3>
+    <a href="{% url 'sky_detail' sky.id%}">
+      <button
+        type="button"
+        class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded w-[100%]"
+      >
+        Details
+      </button>
+    </a>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

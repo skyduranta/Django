@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ SkyColor Page
+{% endblock %}
+
+
+{% block content %}
+
+<div class="flex justify-center items-center min-h-screen">
+    <div class="bg-gray-600 hover:bg-gray-500 grid grid-cols-2 rounded w-[70%]">
+        <h1 class="text-4xl font-bold bg-slate-400 p-5 col-span-2">Sky color detail</h1>
+        <h3 class="text-2xl font-bold p-5 col-span-2">{{sky.color}}</h3>
+        <img class="bg-slate-400 rounded shadow-lg gap-4 p-4 m-5" src="{{sky.image.url}}" alt="" />
+        <p class="gap-4 m-4 p-4 rounded">{{ sky.description }}</p>
+        <a href="{{'../'}}">
+            <button type="button" class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded m-4">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
